@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiabangping.api.dao.mybatis.mapper.BiglucklyMapper">
+  <resultMap id="BaseResultMap" type="com.jiabangping.api.dao.mybatis.model.Bigluckly">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="period" jdbcType="INTEGER" property="period" />
+    <result column="r1" jdbcType="BIT" property="r1" />
+    <result column="r2" jdbcType="BIT" property="r2" />
+    <result column="r3" jdbcType="BIT" property="r3" />
+    <result column="r4" jdbcType="BIT" property="r4" />
+    <result column="r5" jdbcType="BIT" property="r5" />
+    <result column="b1" jdbcType="BIT" property="b1" />
+    <result column="b2" jdbcType="BIT" property="b2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, period, r1, r2, r3, r4, r5, b1, b2
+  </sql>
+</mapper>

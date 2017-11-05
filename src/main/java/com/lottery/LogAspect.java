@@ -1,4 +1,4 @@
-package java.com.lottery;
+package com.lottery;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -23,7 +23,7 @@ public class LogAspect {
 
   ThreadLocal<Long> startTime = new ThreadLocal<>();
 
-  @Pointcut("execution(* com.jiabangping.api.controller.*Controller.*(..))")
+  @Pointcut("execution(* com.lottery.controller.*Controller.*(..))")
   public void apiLog() {
   }
 
