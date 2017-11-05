@@ -70,6 +70,6 @@ public class GlobalExceptionHandler {
   @ResponseBody
   public ExceptionResponse handleException(Exception ex) {
     ex.printStackTrace();
-    return new ExceptionResponse(new ErrorMessage("服务器未知异常", "", "", ""),"500");
+    return new ExceptionResponse(new ErrorMessage("服务器未知异常", "", ex.getMessage(), ""),"500");
   }
 }
