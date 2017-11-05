@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lottery.dao.mybatis.model.Bigluckly;
+import com.lottery.exception.HttpStatus401Exception;
 import com.lottery.service.BiglucklyService;
 
 
@@ -29,15 +30,18 @@ public class BiglucklyController {
 	@Autowired
 	BiglucklyService biglucklyService;
 
-	@ApiOperation(value = "测试")
+	@ApiOperation(value = "根据大乐透id获取详情")
 	@ApiImplicitParams({
-		@ApiImplicitParam(paramType = "query", name = "name", value = "姓名", dataType = "String") 
+		@ApiImplicitParam(paramType = "path", name = "id", value = "id", dataType = "Integer")
+		//,@ApiImplicitParam(paramType = "query", name = "name", value = "姓名", dataType = "String") 
 	})
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Bigluckly user(
-			@PathVariable("id") Long id) {
+			@PathVariable("id") Long id) throws HttpStatus401Exception {
+		if( new Long(1).equals(id)) {
+			throw new HttpStatus401Exception("401", "401", "401", "401");
+		}
 		return biglucklyService.selectById(id);
 	}
-
 	
 }
